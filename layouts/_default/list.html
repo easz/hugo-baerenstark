@@ -1,38 +1,44 @@
 {{ define "main" }}
+
+<!-- list either selected tag or all tags -->
+{{ if .Data.Singular }}
+<small>
+  <div>
+    <i><b style="margin-right:2ch;">#{{ .Title }}</b></i>
+    <a href="/">[show all tags]</a></i>
+  </div>
+</small>
+{{else}}
+<small>
+  <div>
+    {{ range .Site.Taxonomies.tags }}
+    <i><a style="margin-right:2ch;" href="{{ .Page.Permalink }}">#{{ .Page.Title }}</a></i>
+    {{ end }}
+  </div>
+</small>
+{{ end }}
+
+
+<!-- list either filtered posts or all posts -->
+{{ $pages := slice }}
+{{ if .Data.Singular }}
+  {{ $pages = .Pages }}
+{{ else }}
+  {{ $pages = (.Paginate ( where .Site.RegularPages "Section" "posts" ).ByDate.Reverse).Pages }}
+{{ end }}
+
 <content>
-  {{ if .Data.Singular }}
-  <h3 style="margin-bottom:0">Filtering for "{{ .Title }}"</h3>
-  <small>
-    <a href="{{ "/blog" | relURL }}">Remove filter</a>
-  </small>
-  {{ end }}
   <ul class="blog-posts">
-    {{ range .Pages }}
+    {{ range $pages }}
     <li>
-      <span>
-        <i>
-          <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
-            {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
-          </time>
-        </i>
-      </span>
       <a href="{{ .Permalink }}">{{ .Title }}</a>
-    </li>
-    {{ else }}
-    <li>
-      No posts yet
+      <div style="flex-grow:1;border-bottom:1px dotted #000;max-height:2px;margin:0 1ch;"></div>
+      <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
+        {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+      </time>
     </li>
     {{ end }}
   </ul>
-  {{ if .Data.Singular }}
-  {{else}}
-    <small>
-      <div>
-        {{ range .Site.Taxonomies.tags }}
-        <a href="{{ .Page.Permalink }}">#{{ .Page.Title }}</a>&nbsp;
-        {{ end }}
-      </div>
-    </small>
-    {{ end }}
 </content>
+
 {{ end }}

@@ -24,9 +24,10 @@
 </head>
 
 <body>
-  <header>
+  <header style="align-items:end;display:flex;flex-wrap:wrap;">
     {{- partial "header.html" . -}}
   </header>
+  <hr style="clear:both;"/>
   <main>
     {{- block "main" . }}{{- end }}
   </main>

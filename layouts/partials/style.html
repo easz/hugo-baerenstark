@@ -6,7 +6,7 @@
 
   body {
     font-family: var(--sans-font);
-    font-size: 1rem;
+    font-size: 1.2rem;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     line-height: 1.6;
@@ -16,44 +16,44 @@
 
     max-width: 720px;
     background-color: #fff;
-    color: #444;
+    color: #333;
 
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
 
+  header > h2 {
+    margin: 0px;
+    letter-spacing: 0.25rem;
+    color: #444;
+    font-size: 1.5rem;
+  }
+
+  main {
+    margin: 20px 20px 20px 0;
+  }
+  time {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.012em;
+  }
+
   h1, h2, h3, h4, h5, h6, strong, b {
-    color: #222;
   }
 
-  a {
+  a, a:visited {
     text-decoration-skip-ink: auto;
-    text-decoration: underline;
-    color: #000;
-  }
-
-  a:visited {
+    text-decoration: none;
     color: #333;
   }
 
   ::selection, a:focus, a:hover {
     color: #fff;
-    background: #333;
-  }
-
-  .title {
-    text-decoration: none;
-    border: 0;
-  }
-
-  .title span {
-    font-weight: 400;
+    background-color: #444;
   }
 
   nav a {
-    text-decoration: none;
-    margin-right: 10px;
-    border:1px;
+    margin-right: 2ch;
+    border:1px black;
   }
 
   textarea {
@@ -67,6 +67,10 @@
 
   content {
     line-height: 1.6;
+  }
+
+  content a {
+    text-decoration: underline;
   }
 
   table {
@@ -126,39 +130,39 @@
   ul.blog-posts {
     list-style-type: none;
     padding: unset;
+    margin: 1px 10px 10px 0px;
   }
 
   ul.blog-posts li {
     display: flex;
+    justify-content: space-between;
+    align-items:center;
   }
 
   ul.blog-posts li span {
     flex: 0 0 130px;
   }
 
-  ul.blog-posts li a:visited {
-    color: #8b6fcb;
+  ul.blog-posts li a {
+    text-decoration: none;
   }
 
   @media (prefers-color-scheme: dark) {
     body {
-      background-color: #333;
-      color: #ddd;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    strong,
-    b {
+      background-color: #444;
       color: #eee;
     }
 
-    a {
-      color: #8cc2dd;
+    h1, h2, h3, h4, h5, h6, strong, b {
+    }
+
+    a, a:visited {
+      color: #eee;
+    }
+
+    ::selection, a:focus, a:hover {
+      color: #333;
+      background-color: #ddd;
     }
 
     code {
