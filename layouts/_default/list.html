@@ -32,7 +32,7 @@
     {{ range $pages }}
     <li>
       <a href="{{ .Permalink }}">{{ .Title }}</a>
-      <div style="flex-grow:1;border-bottom:1px dotted #000;max-height:2px;margin:0 1ch;"></div>
+      <div class="line"></div>
       <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
         {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
       </time>

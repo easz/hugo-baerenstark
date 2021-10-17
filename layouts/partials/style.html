@@ -22,11 +22,12 @@
     overflow-wrap: break-word;
   }
 
-  header > h2 {
+  .logo {
     margin: 0px;
     letter-spacing: 0.25rem;
     color: #444;
-    font-size: 1.5rem;
+    font-weight: 800;
+    font-size: 1.4rem;
   }
 
   main {
@@ -147,9 +148,22 @@
     text-decoration: none;
   }
 
+  ul.blog-posts li .line {
+    text-decoration: none;
+    flex-grow: 1;
+    border-bottom: 1px dotted;
+    border-color: #333;
+    min-height: 0.9ch;
+    margin: 0 1ch;
+  }
+
   @media (prefers-color-scheme: dark) {
     body {
       background-color: #444;
+      color: #eee;
+    }
+
+    .logo {
       color: #eee;
     }
 
@@ -163,6 +177,10 @@
     ::selection, a:focus, a:hover {
       color: #333;
       background-color: #ddd;
+    }
+
+    ul.blog-posts li .line {
+      border-color: #ddd;
     }
 
     code {
