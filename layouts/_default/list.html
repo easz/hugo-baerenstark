@@ -1,6 +1,7 @@
 {{ define "main" }}
 
 <!-- list either selected tag or all tags -->
+<!--
 {{ if .Data.Singular }}
 <small>
   <div>
@@ -17,7 +18,7 @@
   </div>
 </small>
 {{ end }}
-
+-->
 
 <!-- list either filtered posts or all posts -->
 {{ $pages := slice }}
@@ -40,5 +41,5 @@
     {{ end }}
   </ul>
 </content>
-
+    {{ template "_internal/pagination.html" . }}
 {{ end }}

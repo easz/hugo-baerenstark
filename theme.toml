@@ -7,7 +7,7 @@ licenselink = "https://raw.githubusercontent.com/easz/hugo-baerenstark/master/LI
 description = "Another simple Hugo theme"
 homepage = "https://github.com/easz/hugo-baerenstark"
 demosite = ""
-tags = []
+tags = ["seo", "minimal", "dark-mode", "blog", "pagination", "tag"]
 features = []
 min_version = "0.73.0"
 

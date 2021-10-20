@@ -1,3 +1,9 @@
+{{ $isHome := .IsHome }}
+{{ $current := . }}
 {{ range .Site.Menus.main }}
-<a href="{{ .URL }}">{{ .Name }}</a>
+{{ $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) }}
+{{ $active = or $active (eq .Name $current.Title) }}
+{{ $active = or $active (and (eq .Identifier "index") ($isHome)) }}
+{{ $active = or $active (and (eq .Identifier "index") (eq $current.Section "posts")) }}
+<a href="{{ .URL }}"><span style="{{ if not $active }}visibility:hidden;{{ end }}">↳</span>{{ .Name }}</a>
 {{ end }}
