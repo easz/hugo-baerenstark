@@ -4,7 +4,7 @@ title = "About"
 
 # About
 
-**Another Minimalist Hugo Theme 🧸💪**
+**Another Minimalist Hugo Theme: [Bärenstark](https://github.com/easz/hugo-baerenstark) 🧸💪**
 
 Initially forked from [hugo-bearlog](https://github.com/janraasch/hugo-bearblog/) and
 
