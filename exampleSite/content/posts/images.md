@@ -1,7 +1,7 @@
 +++
 title = "Some images"
 date = "2021-09-16"
-#tags = ["images"]
+tags = ["image", "post"]
 +++
 
 <style>

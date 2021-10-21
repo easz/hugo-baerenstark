@@ -1,7 +1,7 @@
 +++
 title = "Mock Lorem"
 date = "2021-03-16"
-#tags = ["personal"]
+tags = ["sandbox", "post"]
 +++
 
 # Scopulos sede Laomedonteis lupis

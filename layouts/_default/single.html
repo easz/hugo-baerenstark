@@ -1,19 +1,21 @@
 {{ define "main" }}
 
-{{ if eq .Type "posts" }}{{ if not .Params.menu }}
+{{ if eq .Type "posts" }}
+{{ if not .Params.menu }}
 <div class="title">{{ .Title }}</div>
 <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
   {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
 </time>
-{{ end }}{{ end }}
+{{ end }}
+{{ end }}
+<small>
+  <div style="padding:0;">
+   {{ range (.GetTerms "tags") }}
+   <i><a style="margin-right:1ch;" href="{{ .Permalink }}">#{{ .LinkTitle }}</a></i>
+  {{ end }}
+  </div>
+</small>
 <content class="writing">
   {{ .Content }}
 </content>
-<!--
-<p>
-  {{ range (.GetTerms "tags") }}
-  <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
-  {{ end }}
-</p>
--->
 {{ end }}

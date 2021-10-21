@@ -2,7 +2,7 @@
 title = "Foo Lorem"
 date = "2021-01-03"
 description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
-#tags = [ "project" ]
+tags = [ "foobar", "post" ]
 +++
 
 # Tum posse dentes iuncta exuviis mater avidae

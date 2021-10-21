@@ -1,7 +1,7 @@
 +++
 title = "Bar Lorem"
 date = "2021-02-16"
-#tags = ["personal"]
+tags = ["foobar", "post"]
 +++
 
 # Edentem deponit clamat

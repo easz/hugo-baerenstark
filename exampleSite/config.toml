@@ -5,7 +5,7 @@ copyright = "CC BY-SA 4.0"
 languageCode = "en-US"
 theme = 'hugo-baerenstark'
 enableRobotsTXT = true
-paginate = 5
+paginate = 3
 
 [params]
   description = "John's Blog"
@@ -26,7 +26,7 @@ paginate = 5
 
 [markup]
   [markup.highlight]
-    # highligt styles are defined in style.html for both light and darkc olor schemes
+    # highligt styles are defined in style.html for both light and dark color schemes
     noClasses = false
   [markup.goldmark.renderer]
     unsafe = true

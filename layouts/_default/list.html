@@ -1,29 +1,23 @@
 {{ define "main" }}
 
 <!-- list either selected tag or all tags -->
-<!--
+<small>
+  <div style="padding: 1ch">
 {{ if .Data.Singular }}
-<small>
-  <div>
-    <i><b style="margin-right:2ch;">#{{ .Title }}</b></i>
-    <a href="/">[show all tags]</a></i>
-  </div>
-</small>
+    <i>Filtered by tag: <b>#{{ .Title }}</b><br/>
+    <a href="/">[remove filter]</a></i>
 {{else}}
-<small>
-  <div>
     {{ range .Site.Taxonomies.tags }}
-    <i><a style="margin-right:2ch;" href="{{ .Page.Permalink }}">#{{ .Page.Title }}</a></i>
+    <i><a style="margin-right:1ch;" href="{{ .Page.Permalink }}">#{{ .Page.Title }}</a></i>
     {{ end }}
+{{ end }}
   </div>
 </small>
-{{ end }}
--->
 
 <!-- list either filtered posts or all posts -->
 {{ $pages := slice }}
 {{ if .Data.Singular }}
-  {{ $pages = .Pages }}
+  {{ $pages = .Paginator.Pages }}
 {{ else }}
   {{ $pages = (.Paginate ( where .Site.RegularPages "Section" "posts" ).ByDate.Reverse).Pages }}
 {{ end }}

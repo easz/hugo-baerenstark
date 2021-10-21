@@ -26,6 +26,8 @@
     --code-background-color-dark: #555;
     --pre-code-color-dark: #eee;
     --pre-code-left-color-dark: #4f424b;
+    --input-color-dark: #ddd;
+    --input-background-color-dark: #252525;
   }
 
   body {
@@ -110,7 +112,8 @@
 
   ul.blog-posts {
     list-style-type: none;
-    padding: unset;
+    margin: 0;
+    padding: 0;
   }
 
   ul.blog-posts li {
@@ -198,12 +201,7 @@
     letter-spacing: 0.005rem;
   }
 
-  textarea {
-    width: 100%;
-    font-size: 1rem;
-  }
-
-  input {
+  input, textarea {
     font-size: 1rem;
   }
 
@@ -283,11 +281,9 @@
       color: var(--background-color-dark);
     }
 
-    // TODO
-    textarea,
-    input {
-      background-color: #252525;
-      color: #ddd;
+    input, textarea, input {
+      background-color: var(--input-background-color-dark);
+      color: var(--input-color-dark);
     }
 
   }
