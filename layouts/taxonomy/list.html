@@ -1,0 +1,15 @@
+{{ define "main" }}
+
+{{ $pages := .Pages }}
+<content>
+  <ul class="blog-posts">
+    {{ range $pages }}
+    <li>
+      <a href="{{ .Permalink }}"><span class="rotate">🏷</span> <i>{{ .Title }}</i></a>
+    </li>
+    {{ end }}
+  </ul>
+</content>
+
+{{ end }}
+
