@@ -5,7 +5,7 @@
   <div style="padding: 1ch">
 {{ if .Data.Singular }}
     <i>Filtered by tag: <b>#{{ .Title }}</b><br/>
-    <a href="/">[remove filter]</a></i>
+    <a href="{{ .Site.BaseURL }}">[remove filter]</a></i>
 {{else}}
     {{ range .Site.Taxonomies.tags }}
     <i><a style="margin-right:1ch;" href="{{ .Page.Permalink }}">#{{ .Page.Title }}</a></i>
