@@ -9,7 +9,7 @@
 <small>
   <div style="padding:0;">
    {{ range (.GetTerms "tags") }}
-   <i><a style="margin-right:1ch;" href="{{ .Permalink }}">#{{ .LinkTitle }}</a></i>
+   <i><a style="margin-right:1ch;" href="{{ .Permalink }}"><span class="rotate">🏷</span> {{ .LinkTitle }}</a></i>
   {{ end }}
   </div>
 </small>
