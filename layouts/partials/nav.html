@@ -1,5 +1,6 @@
 {{ $current := . }}
 {{ range .Site.Menus.main }}
-{{ $active := (eq $current.Section (replaceRE "/?([^/]+).*" "$1" .URL)) }}
+{{ $active := (eq .Name $current.Title) }}
+{{ $active = or $active (eq $current.Section (replaceRE ".*/([^/]+).*" "$1" .URL)) }}
 <a href="{{ .URL }}"><span style="{{ if not $active }}visibility:hidden;{{ end }}">↳</span>{{ .Name }}</a>
 {{ end }}
